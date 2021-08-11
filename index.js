@@ -46,7 +46,8 @@ Use the copy function below to do the following:
 */
 
 function copy(originalFlavors){
-  return originalFlavors;
+  const flavorsCopy = [...originalFlavors];
+  return flavorsCopy;
 }    
 
 
@@ -85,9 +86,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(originalFlavor){
-  originalFlavor.unshift('Rainbow Sherbert');
-  return originalFlavor;
+function addFlavor(originalFlavors){
+  originalFlavors.unshift('Rainbow Sherbert');
+  return originalFlavors;
 }
 
 
@@ -102,9 +103,9 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(originalFlavor){
-  originalFlavor.pop();
-  return originalFlavor;
+function removeLastFlavor(originalFlavors){
+  originalFlavors.pop();
+  return originalFlavors;
 }
 
 
@@ -140,10 +141,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(originalFlavors, removeThisFlavor){
+  for(let 
+    i = 0; i < originalFlavors.length; i++){
+    if(originalFlavors[i] === removeThisFlavor){
+      originalFlavors.splice(i, 1);
+    }
+  }
+  return originalFlavors;
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -166,8 +172,14 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(originalFlavors, thisFlavor){
+  const filteredArray = [];
+  for(let i = 0; i < originalFlavors.length; i++){
+    if(originalFlavors[i].includes(thisFlavor)){
+      filteredArray.push(originalFlavors[i]);
+    }
+  }
+  return filteredArray;
 }
 
 
